@@ -1,0 +1,227 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  width:100%;
+  min-height:100vh;
+
+  background:#f7f1eb;
+
+  font-family:Arial,sans-serif;
+
+  overflow:hidden;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  position:relative;
+}
+
+/* CONTAINER */
+
+.container{
+  width:90%;
+  max-width:1200px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  z-index:2;
+}
+
+/* TEXTOS */
+
+.texto{
+  width:40%;
+}
+
+.texto h1{
+  font-size:3rem;
+
+  color:#5e3b2d;
+
+  margin-bottom:20px;
+}
+
+.texto p{
+  font-size:1.2rem;
+
+  color:#555;
+
+  margin-bottom:15px;
+
+  line-height:1.6;
+}
+
+#contador{
+  margin-top:25px;
+
+  font-size:1rem;
+  font-weight:bold;
+
+  color:#8b5e3c;
+}
+
+/* IMAGEM */
+
+.imagem img{
+  width:500px;
+
+  animation:flutuar 4s ease-in-out infinite;
+
+  filter:drop-shadow(0 0 20px rgba(255,255,255,0.8));
+}
+
+/* RAMAGENS */
+
+.ramo{
+  position:absolute;
+
+  width:250px;
+
+  opacity:0.9;
+
+  z-index:1;
+}
+
+.topo-esquerda{
+  top:0;
+  left:0;
+}
+
+.baixo-direita{
+  bottom:0;
+  right:0;
+
+  transform:rotate(180deg);
+}
+
+/* CORAÇÕES */
+
+.hearts{
+  position:fixed;
+
+  width:100%;
+  height:100vh;
+
+  overflow:hidden;
+
+  z-index:0;
+}
+
+.hearts span{
+  position:absolute;
+
+  bottom:-100px;
+
+  width:30px;
+  height:30px;
+
+  background:url('heart.png');
+  background-size:cover;
+
+  animation:subir 10s linear infinite;
+
+  opacity:0.5;
+}
+
+.hearts span:nth-child(1){
+  left:10%;
+  animation-duration:8s;
+}
+
+.hearts span:nth-child(2){
+  left:25%;
+  animation-duration:11s;
+}
+
+.hearts span:nth-child(3){
+  left:45%;
+  animation-duration:9s;
+}
+
+.hearts span:nth-child(4){
+  left:65%;
+  animation-duration:13s;
+}
+
+.hearts span:nth-child(5){
+  left:80%;
+  animation-duration:7s;
+}
+
+.hearts span:nth-child(6){
+  left:90%;
+  animation-duration:15s;
+}
+
+/* ANIMAÇÕES */
+
+@keyframes subir{
+
+  0%{
+    transform:translateY(0) rotate(0deg);
+    opacity:0;
+  }
+
+  10%{
+    opacity:0.5;
+  }
+
+  100%{
+    transform:translateY(-120vh) rotate(360deg);
+    opacity:0;
+  }
+
+}
+
+@keyframes flutuar{
+
+  0%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-15px);
+  }
+
+  100%{
+    transform:translateY(0);
+  }
+
+}
+
+/* RESPONSIVO */
+
+@media(max-width:900px){
+
+  body{
+    overflow:auto;
+  }
+
+  .container{
+    flex-direction:column;
+    text-align:center;
+
+    padding-top:100px;
+  }
+
+  .texto{
+    width:100%;
+    margin-bottom:40px;
+  }
+
+  .imagem img{
+    width:320px;
+  }
+
+  .ramo{
+    width:150px;
+  }
+
+}
